@@ -25,8 +25,10 @@ $(document).ready(function () {
 
 
     function coverVideo() {
-        var windowTop = $(window).scrollTop();
-        $(".video-container").css("top", windowTop * 1 + 'px');
+        if ($(window).width() > 768) {
+            var windowTop = $(window).scrollTop();
+            $(".video-container").css("top", windowTop * 1 + 'px');
+        }
     }
 
     function hideDate() {
