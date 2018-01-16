@@ -15,7 +15,6 @@ $(document).ready(function () {
     });
 
 
-
     $('#menu').click(function () {
         $('#ulnav').toggleClass('active');
     });
@@ -25,14 +24,10 @@ $(document).ready(function () {
     });
 
 
-
-
-    $(window).scroll(function () {
-        hideDate();
-        showPics();
-
-
-    });
+    function coverVideo() {
+        var windowTop = $(window).scrollTop();
+        $(".video-container").css("top", windowTop * 1 + 'px');
+    }
 
     function hideDate() {
         if ($(this).scrollTop() > 200)
@@ -45,10 +40,16 @@ $(document).ready(function () {
     }
 
     function showPics() {
-        const h = 1500;
+        const h = 15500;
         if ($(this).scrollTop() > h)
         {
             $('#col1').fadeIn("slow");
         }
     }
+
+    $(window).scroll(function () {
+        hideDate();
+        showPics();
+        coverVideo();
+    });
 });

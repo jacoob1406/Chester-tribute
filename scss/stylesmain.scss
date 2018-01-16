@@ -19,6 +19,12 @@ $col: #f3f3f3;
     -moz-box-sizing: border-box;
     max-width:100vw;
     font-family: 'Raleway', sans-serif;
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+    -khtml-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none;  
+    user-select: none;
 }
 
 body{
@@ -260,12 +266,16 @@ nav{
 .memories{
     z-index: 3;
     position: relative;
-    width: 95%;
+    width: 100%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    text-align: center;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     color: $col;
     padding-bottom: 50px;
+    background: black;
 
     h1{
         padding: 50px;
@@ -332,7 +342,7 @@ nav{
         }
     }
 }
-/* Responsive layout - makes a two column-layout instead of four columns */
+
 @media (max-width: 990px) {
     .memories .row .column {
         flex: 50%;
@@ -340,7 +350,6 @@ nav{
     }
 }
 
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media (max-width: 600px) {
     .memories .row .column {
         flex: 100%;
@@ -351,16 +360,18 @@ nav{
 
 
 .together{
+    background: black;
     z-index: 3;
     position: relative;
-    width: 70%;
+    width: 100%;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
     padding: 40px 0;
     line-height: 70px;
 
     p{
+        width: 70%;    
+        margin-left: auto;
+        margin-right: auto;
         color: $col;
         font-size: 2em;
         font-weight: bold;
@@ -372,6 +383,19 @@ nav{
             &:hover{
                 opacity: 0.6;
             }
+        }
+    }
+}
+
+
+
+@media (max-width: 600px) {
+    .together{
+        line-height: 40px;
+        font-size: 1.3em;
+        p{
+            padding-top: 20px;
+            width: 90%;
         }
     }
 }
